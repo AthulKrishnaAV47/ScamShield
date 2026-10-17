@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { font-size: 19px; }
+body { @apply bg-white text-ink antialiased; }
+
+:focus-visible { outline: 4px solid #0B4A8F; outline-offset: 3px; border-radius: 6px; }
+
+@keyframes wave { 0%, 100% { transform: scaleY(0.15); } 50% { transform: scaleY(1); } }
+@keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.7); } 100% { box-shadow: 0 0 0 28px rgba(255,255,255,0); } }
+.wave-bar { animation: wave 1s ease-in-out infinite; transform-origin: center; }
+.ring-pulse { animation: ring 1.6s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-bar, .ring-pulse { animation: none; transform: scaleY(0.6); }
+}
